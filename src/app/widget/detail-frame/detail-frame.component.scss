@@ -1,0 +1,56 @@
+@import '~@angular/material/theming';
+@import '../../../assets/styles/recipe-puppy-app-theme.scss';
+
+$body-font-size-base: 14px !default;
+$detail-frame-border-radius: 2px !default;
+$detail-frame-header-height: 45px !default;
+$detail-frame-header-padding: 0 0 0 0;
+$detail-frame-margin: 10px 10px 10px 10px;
+$detail-frame-padding: 10px 10px 10px 10px;
+$detail-frame-label-color: mat-color($mat-grey, 400);
+
+detail-frame {
+  display: block;
+  position: relative;
+  margin: $detail-frame-margin;
+  border-radius: $detail-frame-border-radius;
+  @include mat-elevation(1);
+  @extend .detail-frame-background;
+  padding: $detail-frame-padding;
+
+  .detail-frame--flat {
+    box-shadow: none;
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    height: $detail-frame-header-height;
+    padding: $detail-frame-header-padding;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &-title {
+    display: block;
+    font-size: $body-font-size-base;
+    font-weight: 400;
+    padding-top: 20px;
+    border-bottom: solid 1px;
+    width: 100%;
+    margin-bottom: 10px;
+    @extend .primaryColor;
+  }
+
+  &-content {
+    display: block;
+    font-size: $body-font-size-base;
+  }
+
+  &-label {
+    color: $detail-frame-label-color;
+    font-weight: 400;
+    font-size: 85%;
+  }
+}

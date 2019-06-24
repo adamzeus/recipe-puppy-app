@@ -1,0 +1,55 @@
+.card-search {
+  min-width: 400px;
+  min-height: 150px;
+}
+
+.card-search__thumbnail {
+  margin-top: 5px;
+  margin-right: 5px;
+  height: 60px;
+  width:60px;
+}
+
+.card-search__nothumbnail {
+  font-size: 50px;
+}
+
+.mat-card-title {
+  font-size: 14px;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0px;
+}
+
+.mat-card {
+  padding: 10px;
+  margin: 5px;
+}
+
+.mat-card-content {
+  margin-top: 10px;
+}
+
+.mat-card-header {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  height: 60px;
+}
+
+.search-title__headline {
+  font-size: 16px;
+}
+
+.search-title__favourite {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+::ng-deep.mat-card-header-text {
+  width: 100%;
+}

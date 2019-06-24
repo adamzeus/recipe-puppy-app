@@ -1,0 +1,29 @@
+<detail-frame>
+  <detail-frame-content>
+    <div class="row between-xs">
+      <div class="col-lg-6 col-md-6 col-xs-12">
+        <div class="box">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>
+                Select ingredients to search for:
+              </mat-card-title>
+            </mat-card-header>
+            <ul>
+              <li *ngFor="let item of recipePuppyFilters">
+                <mat-checkbox [(ngModel)]="item.checked">{{item.ingredient}}</mat-checkbox>
+              </li>
+            </ul>
+            <hr />
+            <button id="clearFilter" mat-raised-button color="primary" (click)="onClearRecipePuppyFilter()">
+              Clear
+            </button>
+            <button id="searchFilter" mat-raised-button [disabled]="disableSearch" color="primary" (click)="onRecipePuppySearch()">
+              Search
+            </button>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </detail-frame-content>
+</detail-frame>

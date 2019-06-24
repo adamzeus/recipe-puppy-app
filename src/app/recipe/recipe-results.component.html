@@ -1,0 +1,50 @@
+<detail-frame>
+  <detail-frame-content>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <back-navigation title="Back to search" label="Back to search" [link]="['../']"></back-navigation>
+        </div>
+      </div>
+    </div>
+    <div class="row between-xs">
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-xs-12" *ngFor="let item of recipePuppyResults">
+            <card-search>
+              <card-search-header title="{{ item.title}}"
+                                  subtitle="{{ item.href }}"
+                                  thumbnail="{{item.thumbnail}}">
+              </card-search-header>
+              <card-search-content>
+                <span class="text-color-theme"><strong>Ingredients:</strong></span> {{ item.ingredients }}
+              </card-search-content>
+            </card-search>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row end-xs">
+      <div class="col-xs-12">
+        <div class="box">
+          <!--<strong>{{pageNumber}}</strong>-->
+          <button mat-fab *ngIf="showPrevious" (click)="onPrevious()">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+          </button>
+          <button mat-fab (click)="onNext()" *ngIf="showNext">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="row center-xs">
+      <div class="col-xs-12">
+        <div class="box">
+          <p class="text-color-theme">Updating recipes in {{subscribeTimer}} seconds.</p>
+        </div>
+      </div>
+    </div>
+  </detail-frame-content>
+</detail-frame>
+<modal-dialog #updateRecipes heading="More recipes available" title="Do you wish to update the list now?" [max-width]="'425px'" [disable-close-onScreen]="true" (applyClick)="onNext()" [apply-text]="'Yes'"  [applyShown]="true" [close-text]="'No'">
+</modal-dialog>

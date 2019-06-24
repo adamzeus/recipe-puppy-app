@@ -1,0 +1,8 @@
+@import '~@angular/material/theming';
+@import '../../../assets/styles/recipe-puppy-app-theme';
+
+.mat-simple-snackbar-action {
+  @extend .primaryColor;
+  font-size: medium !important;
+  font-weight: bold !important;
+}

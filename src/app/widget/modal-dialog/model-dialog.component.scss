@@ -1,0 +1,30 @@
+@import '~@angular/material/theming';
+$mat-font-family: Roboto, 'Helvetica Neue', sans-serif !default;
+
+::ng-deep.dialog-main {
+  font-family: $mat-font-family !important;
+}
+
+h2 {
+  margin-top: 0px;
+}
+
+.button-wrapper {
+  margin-top: 1em;
+  float: right;
+}
+
+.custom-title {
+  margin-top: 0px;
+  font-size: 1.2rem;
+  font-weight: normal;
+  white-space: pre-line;
+}
+
+.mat-dialog-title {
+  margin: 0 0 0 0 !important;
+}
+
+.additionalButton {
+  margin-left: 5px;
+}

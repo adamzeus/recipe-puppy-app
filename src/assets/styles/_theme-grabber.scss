@@ -1,0 +1,79 @@
+@import '~@angular/material/theming';
+
+// Define a custom mixin that takes in the current theme
+@mixin theme-color-grabber($theme) {
+  // Parse the theme and create variables for each color in the pallete
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $recipe-puppy-table-border-colour: invert(mat-color($background, card, 0.2));
+  $recipe-puppy-table-background-colour: mat-color($background, background);
+  $mat-font-family: Roboto, 'Helvetica Neue', sans-serif !default;
+
+  // Create theme specfic styles
+  .primaryColorBG {
+    background-color: mat-color($primary);
+  }
+
+  .accentColorBG {
+    background-color: mat-color($accent);
+  }
+
+  .accentColorBG__lighter {
+    background-color: mat-color($accent, 100) !important;
+  }
+
+  .warnColorBG {
+    background-color: mat-color($warn);
+  }
+
+  .InvertBG {
+    background-color: invert(mat-color($background, card, 0.2));
+  }
+
+  .InvertColor {
+    color: invert(mat-color($background, card, 0.2));
+  }
+
+
+  .primaryColor {
+    color: mat-color($primary) !important;
+  }
+
+  .primary-color__lighter {
+    color: mat-color($primary, 400) !important;
+  }
+
+  .accentColor {
+    color: mat-color($accent) !important;
+  }
+
+  .warnColor {
+    color: mat-color($warn) !important;
+  }
+
+  .primary-color-fill {
+    fill: mat-color($primary) !important;
+  }
+
+  .accent-color-fill {
+    fill: mat-color($accent) !important;
+  }
+
+  .background-color-fill {
+    fill: mat-color($background, background);
+  }
+
+  .text-color-theme {
+    color: mat-color($foreground, text) !important;
+    font-family: $mat-font-family;
+  }
+
+  $detail-frame-background: mat-color($background, background) !default;
+
+  .detail-frame-background {
+    background: $detail-frame-background !important;
+  }
+}

@@ -1,0 +1,13 @@
+<mat-card-header>
+  <div class="card-search__thumbnail" mat-card-avatar>
+    <img *ngIf="thumbnail" [attr.src]="thumbnail" (load)="loadImage($event)" [attr.width]="propotionalWidth" [attr.height]="propotionalHeight" />
+    <i *ngIf="!thumbnail" class="material-icons card-search__nothumbnail">
+      restaurant_menu
+    </i>
+  </div>
+  <mat-card-title>
+    <span class="primaryColor search-title__headline" *ngIf="!subtitle">{{title}}</span>
+    <span class="primaryColor search-title__headline" *ngIf="subtitle"><a class="primaryColor" href="{{subtitle}}" target="_blank">{{title}}</a></span>
+    <mat-icon (click)="onFavourite()" [ngClass]="status ? 'accentColor' : 'InvertColor'" class="search-title__favourite" matTooltip="Favourite">star_rate</mat-icon>
+  </mat-card-title>
+</mat-card-header>

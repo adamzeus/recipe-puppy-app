@@ -1,0 +1,12 @@
+<ng-template #tpl>
+  <div class="dialog-main" (window:resize)="onResize($event)" [style.max-width]="maxWidth+'px'" [style.min-width]="minWidth+'px'">
+    <h2 *ngIf="heading" md-dialog-title>{{heading}}</h2>
+    <p class="custom-title">{{title}}</p>
+    <ng-content></ng-content>
+    <div class="button-wrapper">
+      <button class="additionalButton" *ngFor="let button of additionalButtons; let i = index" (click)="button.onClick()" type="button" mat-raised-button color="primary">{{button.text}}</button>
+      <button *ngIf="applyShown" [disabled]="applyDisabled" type="button" mat-raised-button color="primary" (click)="onApplyClicked()"> {{applyText}} </button>
+      <button type="button" mat-raised-button color="primary" (click)="closeDialog()"> {{closeText}} </button>
+    </div>
+  </div>
+</ng-template>
