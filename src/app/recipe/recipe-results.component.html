@@ -8,19 +8,17 @@
       </div>
     </div>
     <div class="row between-xs">
-      <div class="col-xs-12">
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-xs-12" *ngFor="let item of recipePuppyResults">
-            <card-search>
-              <card-search-header title="{{ item.title}}"
-                                  subtitle="{{ item.href }}"
-                                  thumbnail="{{item.thumbnail}}">
-              </card-search-header>
-              <card-search-content>
-                <span class="text-color-theme"><strong>Ingredients:</strong></span> {{ item.ingredients }}
-              </card-search-content>
-            </card-search>
-          </div>
+      <div class="col-lg-6 col-md-6 col-xs-12" *ngFor="let item of recipePuppyResults">
+        <div class="box">
+          <card-search>
+            <card-search-header title="{{ item.title}}"
+                                subtitle="{{ item.href }}"
+                                thumbnail="{{item.thumbnail}}">
+            </card-search-header>
+            <card-search-content>
+              <span class="text-color-theme"><strong>Ingredients:</strong></span> {{ item.ingredients }}
+            </card-search-content>
+          </card-search>
         </div>
       </div>
     </div>
